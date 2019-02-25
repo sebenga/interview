@@ -29,7 +29,8 @@ class ProductController {
         $response = json_decode($response);
 
         $result = [];
-        foreach($response as $product {
+        
+        foreach($response as $product) {
             $prod = array();
             $prod['ean']=$product->barcode;
             $$prod["name"]=$product->itemName;
@@ -62,13 +63,13 @@ class ProductController {
       
         $requestData = array();
         $requestData['names'] = $name;
-        $body = $requestData['id'];
+        $body =  $requestData['names']
         $request = new Request('HEAD', 'http://192.168.0.241/eanlist?type=Web', $body);
         $response = $client->sendAsync($request);
         $response = json_decode($response);
 
         $result = [];
-        foreach($response as $product {
+        foreach($response as $product) {
             $prod = array();
             $prod['ean']=$product->barcode;
             $$prod["name"]=$product->itemName;
