@@ -63,7 +63,7 @@ class ProductController {
       
         $requestData = array();
         $requestData['names'] = $name;
-        $body =  $requestData['names']
+        $body =  $requestData['names'];
         $request = new Request('HEAD', 'http://192.168.0.241/eanlist?type=Web', $body);
         $response = $client->sendAsync($request);
         $response = json_decode($response);
